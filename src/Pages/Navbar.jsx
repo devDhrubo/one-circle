@@ -301,13 +301,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/my-donations">My Donations</Link>
-                </li>
-                <li>
                   <Link to="/admin-panel">Dashboard</Link>
-                </li>
-                <li>
-                  <Link to="/settings">Settings</Link>
                 </li>
                 <li>
                   <button
