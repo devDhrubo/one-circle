@@ -117,6 +117,17 @@ const Auth = () => {
     setError('');
   };
 
+  // Social login handler (mock)
+  const handleSocialLogin = (provider) => {
+    setLoading(true);
+    setError("");
+    setTimeout(() => {
+      // Simulate successful login
+      setLoading(false);
+      navigate(from, { replace: true });
+    }, 1200);
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50">
       <div className="max-w-md w-full mx-4">
@@ -313,6 +324,23 @@ const Auth = () => {
                 : "Create Account"}
             </button>
           </form>
+
+          {isLogin && (
+            <div className="my-6">
+              <div className="text-center text-gray-500 mb-2">Or sign in with</div>
+              <div className="flex justify-center gap-4">
+                <button type="button" className="btn btn-outline btn-sm flex items-center gap-2" onClick={() => handleSocialLogin('google')}>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google" className="w-5 h-5" /> Google
+                </button>
+                <button type="button" className="btn btn-outline btn-sm flex items-center gap-2" onClick={() => handleSocialLogin('facebook')}>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" className="w-5 h-5" /> Facebook
+                </button>
+                <button type="button" className="btn btn-outline btn-sm flex items-center gap-2" onClick={() => handleSocialLogin('github')}>
+                  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" className="w-5 h-5" /> GitHub
+                </button>
+              </div>
+            </div>
+          )}
 
           <div className="divider my-6">OR</div>
 
