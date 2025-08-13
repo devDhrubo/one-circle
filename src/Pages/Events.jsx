@@ -1,9 +1,13 @@
 import { useState } from "react";
+// Example: import local images
+import bloodPhoto1 from '../assets/1.jpg';
+import bloodPhoto2 from '../assets/2.jpg';
 
 const Events = () => {
   const [activeTab, setActiveTab] = useState("upcoming");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [showCreateEvent, setShowCreateEvent] = useState(false);
+  const [archiveEventId, setArchiveEventId] = useState(null);
 
   const eventCategories = [
     "all", "academic", "cultural", "sports", "workshop", "seminar", "competition", "social", "volunteer"
@@ -105,25 +109,42 @@ const Events = () => {
   const pastEvents = [
     {
       id: 6,
-      title: "Blood Donation Drive",
-      description: "Successful blood donation camp that collected 150+ units of blood.",
-      date: "2024-01-10",
-      attendees: 175,
-      category: "volunteer",
-      image: "🩸",
-      status: "completed"
+      title: "Hackathon 2025",
+      description:
+        "A 12-hour hackathon where students collaborate to create innovative solutions.",
+      date: "2025-08-13",
+      attendees: 30,
+      image: "♾️",
+      category: "Participants",
+      status: "completed",
     },
     {
       id: 7,
       title: "Winter Programming Contest",
-      description: "Competitive programming contest with participants from 15 universities.",
+      description:
+        "Competitive programming contest with participants from 15 universities.",
       date: "2024-01-05",
       attendees: 89,
       category: "competition",
       image: "🏆",
-      status: "completed"
-    }
+      status: "completed",
+    },
   ];
+
+  // Archive data for past events
+  const eventArchives = {
+    6: {
+      photos: [bloodPhoto1, bloodPhoto2],
+      videos: ["https://www.youtube.com/embed/ScMzIvxBSi4"],
+    },
+    7: {
+      photos: [
+        bloodPhoto1,
+        bloodPhoto2,
+      ],
+      videos: ["https://www.youtube.com/embed/tgbNymZ7vqY"],
+    },
+  };
 
   const getFilteredEvents = (events) => {
     if (selectedCategory === "all") return events;
@@ -365,7 +386,7 @@ const Events = () => {
                   <span>👥 {event.attendees} attended</span>
                 </div>
                 <div className="card-actions justify-end mt-4">
-                  <button className="btn btn-outline btn-sm">View Photos</button>
+                  <button className="btn btn-outline btn-sm" onClick={() => setArchiveEventId(event.id)}>View Archive</button>
                 </div>
               </div>
             </div>
@@ -531,6 +552,34 @@ const Events = () => {
                 <button type="submit" className="btn btn-primary">Create Event</button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Archive Modal */}
+      {archiveEventId && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+          <div className="bg-white rounded-xl shadow-lg p-8 max-w-lg w-full relative">
+            <button className="absolute top-2 right-2 btn btn-sm btn-circle btn-error" onClick={() => setArchiveEventId(null)}>&times;</button>
+            <h3 className="text-xl font-bold mb-4">Event Archive</h3>
+            <div className="mb-4">
+              <h4 className="font-semibold mb-2">Photos</h4>
+              <div className="grid grid-cols-2 gap-2">
+                {(eventArchives[archiveEventId]?.photos || []).map((url, idx) => (
+                  <img key={idx} src={url} alt="Event Photo" className="rounded-lg shadow" />
+                ))}
+              </div>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-2">Videos</h4>
+              <div className="space-y-2">
+                {(eventArchives[archiveEventId]?.videos || []).map((url, idx) => (
+                  <div key={idx} className="aspect-video">
+                    <iframe src={url} title={`Event Video ${idx+1}`} frameBorder="0" allowFullScreen className="w-full h-full rounded-lg"></iframe>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )}
