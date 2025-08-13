@@ -1,30 +1,33 @@
+import { default as photo1 } from "../assets/p1.png";
+import photo2 from "../assets/p2.png";
+import photo3 from "../assets/p3.jpg";
 
 const About = () => {
   const developers = [
     {
-      name: "Dhrubo Dev",
-      role: "Full Stack Developer",
-      image: "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
+      name: "Dolan Dhrubo Ray",
+      role: "Frontend Developer",
+      image: photo1,
       skills: ["React", "Node.js", "MongoDB", "Express"],
       github: "https://github.com/devDhrubo",
-      linkedin: "https://linkedin.com/in/devdhrubo"
+      linkedin: "https://linkedin.com/in/devdhrubo",
     },
     {
-      name: "Team Member 2",
-      role: "Frontend Developer",
-      image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
-      skills: ["React", "TailwindCSS", "JavaScript", "UI/UX"],
+      name: "SM Nabil Ausaf",
+      role: "Researcher",
+      image: photo2,
+      skills: [" Task Management", "Team Collaboration", "Presentation"],
       github: "https://github.com/teammember2",
-      linkedin: "https://linkedin.com/in/teammember2"
+      linkedin: "https://linkedin.com/in/teammember2",
     },
     {
-      name: "Team Member 3",
-      role: "Backend Developer",
-      image: "https://img.daisyui.com/images/stock/photo-1472099645785-5658abf4ff4e.webp",
-      skills: ["Node.js", "MongoDB", "API Design", "Database"],
+      name: "Md. Moshiur Rahman",
+      role: "Researcher",
+      image: photo3,
+      skills: [" Task Management", "Team Collaboration", "Presentation"],
       github: "https://github.com/teammember3",
-      linkedin: "https://linkedin.com/in/teammember3"
-    }
+      linkedin: "https://linkedin.com/in/teammember3",
+    },
   ];
 
   return (
@@ -35,8 +38,8 @@ const About = () => {
           About <span className="text-blue-600">oneCircle</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Connecting university communities through innovative solutions for campus life, 
-          emergency support, and student engagement.
+          Connecting university communities through innovative solutions for
+          campus life, emergency support, and student engagement.
         </p>
       </div>
 
@@ -48,11 +51,26 @@ const About = () => {
             <h2 className="card-title text-2xl text-blue-800 mb-4">
               🎯 Our Mission
             </h2>
-            <p className="text-gray-700 leading-relaxed">
-              To create a comprehensive digital platform that enhances university life by 
-              facilitating blood donations, emergency aid, lost item recovery, and community 
-              engagement. We aim to build stronger, more connected campus communities where 
-              students can easily help each other and access essential services.
+            <p className="text-gray-700 leading-relaxed italic">
+              "To digitally transform DIU CPC into an interactive and accessible
+              community that fosters programming excellence, collaboration, and
+              innovation among students."
+            </p>
+            <p>
+              <b>Our mission is to:</b>
+              <li>Enhance communication between the club and its members.</li>
+              <li>
+                Inspire active participation through engaging and rewarding
+                digital features.
+              </li>
+              <li>
+                Promote lifelong learning via resources, tutorials, and coding
+                challenges.
+              </li>
+              <li>
+                Strengthen professional networks by connecting students with
+                peers, mentors, and opportunities
+              </li>
             </p>
           </div>
         </div>
@@ -63,11 +81,30 @@ const About = () => {
             <h2 className="card-title text-2xl text-purple-800 mb-4">
               🌟 Our Vision
             </h2>
-            <p className="text-gray-700 leading-relaxed">
-              To become the leading platform for university community management across 
-              Bangladesh and beyond. We envision a future where every campus has access 
-              to digital tools that promote safety, solidarity, and seamless communication 
-              among students, faculty, and staff.
+            <p className="text-gray-700 leading-relaxed italic">
+              "To be the foremost university programming community in
+              Bangladesh, recognized for innovation, collaboration, and
+              meaningful impact — on campus and beyond."
+            </p>
+            <p>
+              <b>We envision a future where:</b>
+              <li>
+                All DIU CPC members enjoy equal access to events, resources, and
+                opportunities, regardless of location. .
+              </li>
+              <li>
+                The platform serves as a permanent digital archive of the club’s
+                milestones, achievements, and learning materials.
+              </li>
+              <li>
+                DIU CPC consistently produces skilled, industry-ready graduates
+                through continuous training, challenges, and mentorship.
+              </li>
+              <li>
+                Technology is leveraged not only for organization but to ignite
+                creativity, innovation, and leadership within the
+                programming community.
+              </li>
             </p>
           </div>
         </div>
@@ -82,22 +119,30 @@ const About = () => {
           <div className="text-center p-6 rounded-lg bg-red-50 hover:bg-red-100 transition-colors">
             <div className="text-4xl mb-3">🤝</div>
             <h3 className="font-bold text-red-800 mb-2">Community</h3>
-            <p className="text-sm text-gray-600">Building stronger connections within university ecosystems</p>
+            <p className="text-sm text-gray-600">
+              Building stronger connections within university ecosystems
+            </p>
           </div>
           <div className="text-center p-6 rounded-lg bg-green-50 hover:bg-green-100 transition-colors">
             <div className="text-4xl mb-3">💡</div>
             <h3 className="font-bold text-green-800 mb-2">Innovation</h3>
-            <p className="text-sm text-gray-600">Leveraging technology to solve real campus problems</p>
+            <p className="text-sm text-gray-600">
+              Leveraging technology to solve real campus problems
+            </p>
           </div>
           <div className="text-center p-6 rounded-lg bg-yellow-50 hover:bg-yellow-100 transition-colors">
             <div className="text-4xl mb-3">🚀</div>
             <h3 className="font-bold text-yellow-800 mb-2">Impact</h3>
-            <p className="text-sm text-gray-600">Creating meaningful change in students' daily lives</p>
+            <p className="text-sm text-gray-600">
+              Creating meaningful change in students' daily lives
+            </p>
           </div>
           <div className="text-center p-6 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors">
             <div className="text-4xl mb-3">🔒</div>
             <h3 className="font-bold text-blue-800 mb-2">Trust</h3>
-            <p className="text-sm text-gray-600">Ensuring secure and reliable platform experiences</p>
+            <p className="text-sm text-gray-600">
+              Ensuring secure and reliable platform experiences
+            </p>
           </div>
         </div>
       </div>
@@ -108,14 +153,17 @@ const About = () => {
           Meet Our Team
         </h2>
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          We're a passionate team of developers committed to creating innovative solutions 
-          for university communities. Our diverse skills and shared vision drive us to 
-          build exceptional digital experiences.
+          We're a passionate team of developers committed to creating innovative
+          solutions for university communities. Our diverse skills and shared
+          vision drive us to build exceptional digital experiences.
         </p>
-        
+
         <div className="grid md:grid-cols-3 gap-8">
           {developers.map((developer, index) => (
-            <div key={index} className="card bg-white shadow-xl hover:shadow-2xl transition-shadow">
+            <div
+              key={index}
+              className="card bg-white shadow-xl hover:shadow-2xl transition-shadow"
+            >
               <figure className="px-10 pt-10">
                 <img
                   src={developer.image}
@@ -130,12 +178,12 @@ const About = () => {
                 <p className="text-blue-600 font-semibold mb-3">
                   {developer.role}
                 </p>
-                
+
                 {/* Skills */}
                 <div className="flex flex-wrap gap-2 justify-center mb-4">
                   {developer.skills.map((skill, skillIndex) => (
-                    <span 
-                      key={skillIndex} 
+                    <span
+                      key={skillIndex}
                       className="badge badge-outline badge-primary"
                     >
                       {skill}
@@ -177,37 +225,49 @@ const About = () => {
           <div className="card bg-red-50 border border-red-200">
             <div className="card-body">
               <h3 className="card-title text-red-700">🩸 Blood Bank</h3>
-              <p className="text-gray-600">Donor registration and blood request management system</p>
+              <p className="text-gray-600">
+                Donor registration and blood request management system
+              </p>
             </div>
           </div>
           <div className="card bg-blue-50 border border-blue-200">
             <div className="card-body">
               <h3 className="card-title text-blue-700">🔍 Lost & Found</h3>
-              <p className="text-gray-600">Report and find lost items across campus</p>
+              <p className="text-gray-600">
+                Report and find lost items across campus
+              </p>
             </div>
           </div>
           <div className="card bg-green-50 border border-green-200">
             <div className="card-body">
               <h3 className="card-title text-green-700">🌊 Emergency Aid</h3>
-              <p className="text-gray-600">Flood relief and medical aid donation coordination</p>
+              <p className="text-gray-600">
+                Flood relief and medical aid donation coordination
+              </p>
             </div>
           </div>
           <div className="card bg-yellow-50 border border-yellow-200">
             <div className="card-body">
               <h3 className="card-title text-yellow-700">🎉 Events</h3>
-              <p className="text-gray-600">Campus event discovery and management</p>
+              <p className="text-gray-600">
+                Campus event discovery and management
+              </p>
             </div>
           </div>
           <div className="card bg-purple-50 border border-purple-200">
             <div className="card-body">
               <h3 className="card-title text-purple-700">🛒 Marketplace</h3>
-              <p className="text-gray-600">Buy, sell, and auction student items</p>
+              <p className="text-gray-600">
+                Buy, sell, and auction student items
+              </p>
             </div>
           </div>
           <div className="card bg-orange-50 border border-orange-200">
             <div className="card-body">
               <h3 className="card-title text-orange-700">📢 Bulletin</h3>
-              <p className="text-gray-600">Important announcements and notices</p>
+              <p className="text-gray-600">
+                Important announcements and notices
+              </p>
             </div>
           </div>
         </div>
@@ -215,17 +275,13 @@ const About = () => {
 
       {/* Contact Section */}
       <div className="text-center bg-gradient-to-r from-blue-50 to-indigo-100 p-8 rounded-lg">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">
-          Get In Touch
-        </h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Get In Touch</h2>
         <p className="text-gray-600 mb-6">
-          Have questions, suggestions, or want to contribute to uniConnect? 
-          We'd love to hear from you!
+          Have questions, suggestions, or want to contribute to uniConnect? We'd
+          love to hear from you!
         </p>
         <div className="flex justify-center gap-4">
-          <button className="btn btn-primary">
-            📧 Contact Us
-          </button>
+          <button className="btn btn-primary">📧 Contact Us</button>
           <button className="btn btn-outline btn-primary">
             🐙 Contribute on GitHub
           </button>

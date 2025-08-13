@@ -14,12 +14,7 @@ const LostFound = () => {
     reward: ""
   });
 
-  const categories = [
-    "Electronics", "Books", "Clothing", "Accessories", "Documents", 
-    "Keys", "Sports Equipment", "Bags", "Jewelry", "Other"
-  ];
-
-  const lostItems = [
+  const [lostList, setLostList] = useState([
     {
       id: 1,
       itemName: "iPhone 13 Pro",
@@ -59,9 +54,9 @@ const LostFound = () => {
       image: "⌚",
       status: "found"
     }
-  ];
+  ]);
 
-  const foundItems = [
+  const [foundList, setFoundList] = useState([
     {
       id: 1,
       itemName: "Red Backpack",
@@ -98,6 +93,11 @@ const LostFound = () => {
       image: "👓",
       status: "claimed"
     }
+  ]);
+
+  const categories = [
+    "Electronics", "Books", "Clothing", "Accessories", "Documents", 
+    "Keys", "Sports Equipment", "Bags", "Jewelry", "Other"
   ];
 
   const handleInputChange = (e) => {
@@ -109,7 +109,34 @@ const LostFound = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    const newItem = {
+      id: Date.now(),
+      itemName: formData.itemName,
+      category: formData.category,
+      description: formData.description,
+      location: formData.location,
+      date: formData.date,
+      contact: formData.contactEmail || formData.contactPhone,
+      reward: formData.reward,
+      image: formData.type === 'lost' ? '❓' : '✅',
+      status: formData.type === 'lost' ? 'active' : 'unclaimed'
+    };
+    if (formData.type === 'lost') {
+      setLostList(prev => [newItem, ...prev]);
+    } else {
+      setFoundList(prev => [newItem, ...prev]);
+    }
+    setFormData({
+      type: formData.type,
+      itemName: "",
+      category: "",
+      description: "",
+      location: "",
+      date: "",
+      contactEmail: "",
+      contactPhone: "",
+      reward: ""
+    });
     alert(`${formData.type === 'lost' ? 'Lost item' : 'Found item'} report submitted successfully!`);
   };
 
@@ -333,13 +360,13 @@ const LostFound = () => {
           className={`tab tab-lg ${activeTab === "lost" ? "tab-active" : ""}`}
           onClick={() => setActiveTab("lost")}
         >
-          🔍 Lost Items ({lostItems.length})
+          🔍 Lost Items ({lostList.length})
         </button>
         <button 
           className={`tab tab-lg ${activeTab === "found" ? "tab-active" : ""}`}
           onClick={() => setActiveTab("found")}
         >
-          ✨ Found Items ({foundItems.length})
+          ✨ Found Items ({foundList.length})
         </button>
       </div>
 
@@ -354,7 +381,7 @@ const LostFound = () => {
             </div>
           </div>
 
-          {lostItems.map((item) => (
+          {lostList.map((item) => (
             <div key={item.id} className="card bg-white shadow-lg">
               <div className="card-body">
                 <div className="flex items-start gap-4">
@@ -402,7 +429,7 @@ const LostFound = () => {
             </div>
           </div>
 
-          {foundItems.map((item) => (
+          {foundList.map((item) => (
             <div key={item.id} className="card bg-white shadow-lg">
               <div className="card-body">
                 <div className="flex items-start gap-4">

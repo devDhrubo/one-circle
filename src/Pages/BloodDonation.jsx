@@ -8,10 +8,10 @@ const BloodDonation = () => {
   const [donors, setDonors] = useState([]);
   const [donationRequests, setDonationRequests] = useState([]);
   const [stats, setStats] = useState({
-    totalDonors: 0,
-    availableDonors: 0,
-    activeRequests: 0,
-    urgentRequests: 0
+    totalDonors: 45,
+    availableDonors: 20,
+    activeRequests: 10,
+    urgentRequests: 2
   });
   const [formData, setFormData] = useState({
     name: "",
@@ -30,6 +30,40 @@ const BloodDonation = () => {
     loadStats();
     loadDonors();
     loadBloodRequests();
+    // Add dummy donor on mount for demo
+    setDonors(prev => [
+      {
+        id: 100,
+        name: "Demo Donor",
+        bloodGroup: "A+",
+        lastDonation: "Just now",
+        totalDonations: 1,
+        status: "available",
+        badges: ["New Donor"]
+      },
+      ...prev
+    ]);
+    // Add dummy blood request for demo
+    setDonationRequests([
+      {
+        id: 200,
+        name: "John Doe",
+        bloodGroup: "B+",
+        location: "Dhaka Medical",
+        urgency: "High",
+        status: "active",
+        requestedOn: "2025-08-13"
+      },
+      {
+        id: 201,
+        name: "Jane Smith",
+        bloodGroup: "O-",
+        location: "Apollo Hospital",
+        urgency: "Medium",
+        status: "active",
+        requestedOn: "2025-08-12"
+      }
+    ]);
   }, []);
 
   const loadStats = async () => {
@@ -144,33 +178,33 @@ const BloodDonation = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleRegisterDonor = (e) => {
     e.preventDefault();
     setLoading(true);
-
-    try {
-      const response = await bloodApi.registerDonor(formData);
-      showNotification(response.message || "Thank you for registering! We'll contact you soon.");
-      
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        bloodGroup: "",
-        lastDonation: "",
-        medicalConditions: "",
-        location: ""
-      });
-
-      // Reload data
-      loadStats();
-      loadDonors();
-    } catch (error) {
-      showNotification(handleApiError(error), 'error');
-    } finally {
-      setLoading(false);
-    }
+    // Add to donor list instantly (frontend only)
+    setDonors(prev => [
+      {
+        id: Date.now(),
+        name: formData.name,
+        bloodGroup: formData.bloodGroup,
+        lastDonation: "Just now",
+        totalDonations: 1,
+        status: "available",
+        badges: ["New Donor"]
+      },
+      ...prev
+    ]);
+    showNotification('Donor registered successfully!', 'success');
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      bloodGroup: "",
+      lastDonation: "",
+      medicalConditions: "",
+      location: ""
+    });
+    setLoading(false);
   };
 
   const handleDonationResponse = async (requestId) => {
@@ -267,7 +301,7 @@ const BloodDonation = () => {
           <div className="card bg-white shadow-lg">
             <div className="card-body">
               <h3 className="card-title text-red-600 mb-4">Register as Blood Donor</h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleRegisterDonor} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="form-control">
                     <label className="label">
