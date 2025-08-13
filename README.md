@@ -33,7 +33,6 @@ With this platform, *DIU CPC* can:
 ---
 
 ## 👩‍💻 Tech Stack
-- *Frontend:* HTML5, CSS3, JavaScript (React.js / Vue.js)
-- *Backend:* Node.js (Express.js) / Python (Flask or Django)
-- *Database:* MySQL / MongoDB / PostgreSQL
-- *Other Tools:* QRCode.js, AI APIs, ReportLab/FPDF, Google Maps API
+- *Frontend:* HTML5, CSS3, JavaScript (React.js)
+- *Backend:* Node.js (Express.js)
+- *Database:* MongoDB
