@@ -229,7 +229,7 @@ const Bulletin = () => {
         <div className="flex justify-between items-center mb-4">
           <div className="flex-1"></div>
           <h1 className="text-4xl font-bold flex-1">
-            <span className="attention-grabbing">📢 University Bulletin Board</span>
+            <span className="attention-grabbing">📢 Announcement and News Section</span>
           </h1>
           <div className="flex-1 flex justify-end">
             {isAuthenticated && user?.role === 'bulletin_admin' && (

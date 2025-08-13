@@ -32,7 +32,7 @@ const About = () => {
       {/* Hero Section */}
       <div className="text-center mb-16">
         <h1 className="text-5xl font-bold text-gray-800 mb-4">
-          About <span className="text-blue-600">uniConnect</span>
+          About <span className="text-blue-600">oneCircle</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           Connecting university communities through innovative solutions for campus life, 

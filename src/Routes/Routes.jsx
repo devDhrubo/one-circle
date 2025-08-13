@@ -1,7 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
+import BulletinAdminGuard from "../components/BulletinAdminGuard";
+import ProtectedRoute from "../components/ProtectedRoute";
 import Main from "../Layout/Main";
 import About from "../Pages/About";
 import Auction from "../Pages/Auction";
+import Auth from "../Pages/Auth";
 import BloodDonation from "../Pages/BloodDonation";
 import Bulletin from "../Pages/Bulletin";
 import BulletinDashboard from "../Pages/BulletinDashboard";
@@ -10,9 +13,7 @@ import FloodRelief from "../Pages/FloodRelief";
 import Home from "../Pages/Home";
 import LostFound from "../Pages/LostFound";
 import MedicalAid from "../Pages/MedicalAid";
-import Auth from "../Pages/Auth";
-import ProtectedRoute from "../components/ProtectedRoute";
-import BulletinAdminGuard from "../components/BulletinAdminGuard";
+import Profile from "../Pages/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -69,6 +70,10 @@ export const router = createBrowserRouter([
         {
             path: "/bulletin",
             element: <ProtectedRoute><Bulletin/></ProtectedRoute>
+        },
+        {
+            path: "/profile",
+            element: <ProtectedRoute><Profile/></ProtectedRoute>
         }
     ]
   },
