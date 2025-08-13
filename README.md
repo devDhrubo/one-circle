@@ -12,19 +12,14 @@ Our platform bridges the gap between students and the club’s activities by pro
 ---
 
 ## 🛠 Core Features
-- *Member Registration* – Secure sign-up with verification and profile management.
-- *Event Management* – Create, view, register, and track events.
-- *Announcements* – Stay updated with club news and important notices.
-- *Profile Tracking* – View and manage member profiles and participation history.
 
----
+* **Member Registration** – Secure sign-up with verification and profile management.
+* **Event Management** – Create, view, register, and track events.
+* **Announcements** – Stay updated with club news and important notices.
+* **Profile Tracking** – View and manage member profiles and participation history.
+* **Marketplace** – Buy, sell, or exchange items within the club community safely.
+* **Lost and Found** – Report, track, and recover lost items or claim found belongings.
 
-## 🌟 Innovative Features
-- *QR Code Check-ins* – Fast and contactless attendance tracking for events.
-- *Automated Certificate Generation* – Instant event participation certificates.
-- *Gamification* – Earn points, badges, and climb the leaderboard for engagement.
-- *AI Chatbot Support* – Get instant answers to club-related queries.
-- *Collaborative Resource Library* – Share and access programming resources.
 
 ---
 
