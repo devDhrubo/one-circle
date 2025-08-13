@@ -23,59 +23,124 @@ const Navbar = () => {
         <div className="hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-2">
             <li>
-              <Link 
-                to="/" 
-                className={`transition-all duration-300 rounded-lg ${isActive('/') ? 'bg-blue-100 text-blue-700 font-semibold shadow-sm border-l-4 border-blue-500' : 'hover:bg-yellow-50'}`}
+              <Link
+                to="/"
+                className={`transition-all duration-300 rounded-lg ${
+                  isActive("/")
+                    ? "bg-blue-100 text-blue-700 font-semibold shadow-sm border-l-4 border-blue-500"
+                    : "hover:bg-yellow-50"
+                }`}
               >
                 Home
               </Link>
             </li>
+            <li className="dropdown dropdown-hover">
+              <label
+                tabIndex={0}
+                className="transition-all duration-300 rounded-lg font-semibold hover:bg-gray-100 cursor-pointer"
+              >
+                Features
+              </label>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu p-2 shadow bg-base-100 rounded-box min-w-[180px] z-[1]"
+              >
+                <li>
+                  <Link
+                    to="/blood-donation"
+                    className={`transition-all duration-300 rounded-lg ${
+                      isActive("/blood-donation")
+                        ? "bg-red-100 text-red-700 font-semibold border-l-4 border-red-500"
+                        : "text-red-600 hover:bg-red-50"
+                    }`}
+                  >
+                    Blood Bank
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/lost-found"
+                    className={`transition-all duration-300 rounded-lg ${
+                      isActive("/lost-found")
+                        ? "bg-blue-100 text-blue-700 font-semibold border-l-4 border-blue-500"
+                        : "hover:bg-blue-50"
+                    }`}
+                  >
+                    Lost & Found
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/events"
+                    className={`transition-all duration-300 rounded-lg ${
+                      isActive("/events")
+                        ? "bg-yellow-100 text-yellow-700 font-semibold border-l-4 border-yellow-500"
+                        : "hover:bg-yellow-50"
+                    }`}
+                  >
+                    Events
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/auction"
+                    className={`transition-all duration-300 rounded-lg ${
+                      isActive("/auction")
+                        ? "bg-purple-100 text-purple-700 font-semibold border-l-4 border-purple-500"
+                        : "hover:bg-purple-50"
+                    }`}
+                  >
+                    Marketplace
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/bulletin"
+                    className={`transition-all duration-300 rounded-lg ${
+                      isActive("/bulletin")
+                        ? "bg-orange-100 text-orange-700 font-semibold border-l-4 border-orange-500"
+                        : "hover:bg-orange-50"
+                    }`}
+                  >
+                    News
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/job-vacancy"
+                    className={`transition-all duration-300 rounded-lg ${
+                      isActive("/job-vacancy")
+                        ? "bg-teal-100 text-teal-700 font-semibold border-l-4 border-teal-500"
+                        : "hover:bg-teal-50"
+                    }`}
+                  >
+                    Job Board
+                  </Link>
+                </li>
+              </ul>
+            </li>
             <li>
-              <Link 
-                to="/about" 
-                className={`transition-all duration-300 rounded-lg ${isActive('/about') ? 'bg-blue-100 text-blue-700 font-semibold shadow-sm border-l-4 border-blue-500' : 'hover:bg-yellow-50'}`}
+              <Link
+                to="/about"
+                className={`transition-all duration-300 rounded-lg ${
+                  isActive("/about")
+                    ? "bg-blue-100 text-blue-700 font-semibold shadow-sm border-l-4 border-blue-500"
+                    : "hover:bg-yellow-50"
+                }`}
               >
                 About
               </Link>
             </li>
             <li>
               <Link
-                to="/blood-donation"
-                className={`transition-all duration-300 rounded-lg ${isActive('/blood-donation') ? 'bg-red-100 text-red-700 font-semibold shadow-sm border-l-4 border-red-500' : 'text-red-600 hover:bg-red-50'}`}
+                to="/contact"
+                className={`transition-all duration-300 rounded-lg ${
+                  isActive("/contact")
+                    ? "bg-green-100 text-green-700 font-semibold border-l-4 border-green-500"
+                    : "hover:bg-green-50"
+                }`}
               >
-                Blood Bank
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/lost-found" 
-                className={`transition-all duration-300 rounded-lg ${isActive('/lost-found') ? 'bg-blue-100 text-blue-700 font-semibold shadow-sm border-l-4 border-blue-500' : 'hover:bg-blue-50'}`}
-              >
-                Lost & Found
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/events" 
-                className={`transition-all duration-300 rounded-lg ${isActive('/events') ? 'bg-yellow-100 text-yellow-700 font-semibold shadow-sm border-l-4 border-yellow-500' : 'hover:bg-yellow-50'}`}
-              >
-                Events
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/auction" 
-                className={`transition-all duration-300 rounded-lg ${isActive('/auction') ? 'bg-purple-100 text-purple-700 font-semibold shadow-sm border-l-4 border-purple-500' : 'hover:bg-purple-50'}`}
-              >
-                Marketplace
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/bulletin" 
-                className={`transition-all duration-300 rounded-lg ${isActive('/bulletin') ? 'bg-orange-100 text-orange-700 font-semibold shadow-sm border-l-4 border-orange-500' : 'hover:bg-orange-50'}`}
-              >
-                Bulletin
+                Contact
               </Link>
             </li>
           </ul>
@@ -104,65 +169,97 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link 
+                <Link
                   to="/blood-donation"
-                  className={`transition-all duration-200 ${isActive('/blood-donation') ? 'bg-red-100 text-red-700 font-semibold border-l-4 border-red-500' : 'text-red-600 hover:bg-red-50'}`}
+                  className={`transition-all duration-200 ${
+                    isActive("/blood-donation")
+                      ? "bg-red-100 text-red-700 font-semibold border-l-4 border-red-500"
+                      : "text-red-600 hover:bg-red-50"
+                  }`}
                 >
                   🩸 Blood Donation
                 </Link>
               </li>
               <li>
-                <Link 
+                <Link
                   to="/lost-found"
-                  className={`transition-all duration-200 ${isActive('/lost-found') ? 'bg-blue-100 text-blue-700 font-semibold border-l-4 border-blue-500' : 'hover:bg-blue-50'}`}
+                  className={`transition-all duration-200 ${
+                    isActive("/lost-found")
+                      ? "bg-blue-100 text-blue-700 font-semibold border-l-4 border-blue-500"
+                      : "hover:bg-blue-50"
+                  }`}
                 >
                   🔍 Lost & Found
                 </Link>
               </li>
               <li>
-                <Link 
+                <Link
                   to="/flood-relief"
-                  className={`transition-all duration-200 ${isActive('/flood-relief') ? 'bg-teal-100 text-teal-700 font-semibold border-l-4 border-teal-500' : 'hover:bg-teal-50'}`}
+                  className={`transition-all duration-200 ${
+                    isActive("/flood-relief")
+                      ? "bg-teal-100 text-teal-700 font-semibold border-l-4 border-teal-500"
+                      : "hover:bg-teal-50"
+                  }`}
                 >
                   🌊 Flood Relief
                 </Link>
               </li>
               <li>
-                <Link 
+                <Link
                   to="/medical-aid"
-                  className={`transition-all duration-200 ${isActive('/medical-aid') ? 'bg-green-100 text-green-700 font-semibold border-l-4 border-green-500' : 'hover:bg-green-50'}`}
+                  className={`transition-all duration-200 ${
+                    isActive("/medical-aid")
+                      ? "bg-green-100 text-green-700 font-semibold border-l-4 border-green-500"
+                      : "hover:bg-green-50"
+                  }`}
                 >
                   🏥 Medical Aid
                 </Link>
               </li>
               <li>
-                <Link 
+                <Link
                   to="/events"
-                  className={`transition-all duration-200 ${isActive('/events') ? 'bg-yellow-100 text-yellow-700 font-semibold border-l-4 border-yellow-500' : 'hover:bg-yellow-50'}`}
+                  className={`transition-all duration-200 ${
+                    isActive("/events")
+                      ? "bg-yellow-100 text-yellow-700 font-semibold border-l-4 border-yellow-500"
+                      : "hover:bg-yellow-50"
+                  }`}
                 >
                   🎉 Events
                 </Link>
               </li>
               <li>
-                <Link 
+                <Link
                   to="/auction"
-                  className={`transition-all duration-200 ${isActive('/auction') ? 'bg-purple-100 text-purple-700 font-semibold border-l-4 border-purple-500' : 'hover:bg-purple-50'}`}
+                  className={`transition-all duration-200 ${
+                    isActive("/auction")
+                      ? "bg-purple-100 text-purple-700 font-semibold border-l-4 border-purple-500"
+                      : "hover:bg-purple-50"
+                  }`}
                 >
                   🛒 Marketplace
                 </Link>
               </li>
               <li>
-                <Link 
+                <Link
                   to="/bulletin"
-                  className={`transition-all duration-200 ${isActive('/bulletin') ? 'bg-orange-100 text-orange-700 font-semibold border-l-4 border-orange-500' : 'hover:bg-orange-50'}`}
+                  className={`transition-all duration-200 ${
+                    isActive("/bulletin")
+                      ? "bg-orange-100 text-orange-700 font-semibold border-l-4 border-orange-500"
+                      : "hover:bg-orange-50"
+                  }`}
                 >
                   📢 Bulletin
                 </Link>
               </li>
               <li>
-                <Link 
+                <Link
                   to="/about"
-                  className={`transition-all duration-200 ${isActive('/about') ? 'bg-blue-100 text-blue-700 font-semibold border-l-4 border-blue-500' : 'hover:bg-gray-100'}`}
+                  className={`transition-all duration-200 ${
+                    isActive("/about")
+                      ? "bg-blue-100 text-blue-700 font-semibold border-l-4 border-blue-500"
+                      : "hover:bg-gray-100"
+                  }`}
                 >
                   ℹ️ About
                 </Link>
@@ -181,7 +278,10 @@ const Navbar = () => {
                 <div className="w-10 rounded-full">
                   <img
                     alt="User Avatar"
-                    src={user?.avatar || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"}
+                    src={
+                      user?.avatar ||
+                      "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                    }
                   />
                 </div>
               </div>
@@ -190,7 +290,9 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
               >
                 <li className="menu-title">
-                  <span className="text-xs text-gray-500">Welcome, {user?.name}</span>
+                  <span className="text-xs text-gray-500">
+                    Welcome, {user?.name}
+                  </span>
                 </li>
                 <li>
                   <Link to="/profile" className="justify-between">
@@ -202,18 +304,18 @@ const Navbar = () => {
                   <Link to="/my-donations">My Donations</Link>
                 </li>
                 <li>
-                  <Link to="/my-listings">My Listings</Link>
+                  <Link to="/admin-panel">Dashboard</Link>
                 </li>
                 <li>
                   <Link to="/settings">Settings</Link>
                 </li>
                 <li>
-                  <button 
+                  <button
                     onClick={() => {
-                      if (confirm('Are you sure you want to logout?')) {
+                      if (confirm("Are you sure you want to logout?")) {
                         logout();
                       }
-                    }} 
+                    }}
                     className="text-red-600 hover:bg-red-50"
                   >
                     Logout
@@ -225,9 +327,6 @@ const Navbar = () => {
             <div className="flex gap-2">
               <Link to="/auth" className="btn btn-outline btn-primary btn-sm">
                 Sign In
-              </Link>
-              <Link to="/auth" className="btn btn-primary btn-sm">
-                Sign Up
               </Link>
             </div>
           )}

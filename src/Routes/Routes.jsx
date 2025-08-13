@@ -3,14 +3,17 @@ import BulletinAdminGuard from "../components/BulletinAdminGuard";
 import ProtectedRoute from "../components/ProtectedRoute";
 import Main from "../Layout/Main";
 import About from "../Pages/About";
+import AdminPanel from "../Pages/AdminPanel";
 import Auction from "../Pages/Auction";
 import Auth from "../Pages/Auth";
 import BloodDonation from "../Pages/BloodDonation";
 import Bulletin from "../Pages/Bulletin";
 import BulletinDashboard from "../Pages/BulletinDashboard";
+import Contact from "../Pages/Contact";
 import Events from "../Pages/Events";
 import FloodRelief from "../Pages/FloodRelief";
 import Home from "../Pages/Home";
+import JobVacancy from "../Pages/JobVacancy";
 import LostFound from "../Pages/LostFound";
 import MedicalAid from "../Pages/MedicalAid";
 import Profile from "../Pages/Profile";
@@ -74,6 +77,18 @@ export const router = createBrowserRouter([
         {
             path: "/profile",
             element: <ProtectedRoute><Profile/></ProtectedRoute>
+        },
+        {
+            path: "/job-vacancy",
+            element: <ProtectedRoute><JobVacancy/></ProtectedRoute>
+        },
+        {
+            path: "/contact",
+            element: <Contact/>
+        },
+        {
+            path: "/admin-panel",
+            element: <AdminPanel/>
         }
     ]
   },
